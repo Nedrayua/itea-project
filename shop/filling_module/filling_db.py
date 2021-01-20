@@ -110,7 +110,7 @@ PRODUCTS = [
                        ' без ОС / 1.8 кг / серебристый',
         'price': 15000,
         'discount': 5,
-        'photo': 'shop\\filling_module\\img_for_bot\\nb_ac_01.jpg',
+        'photo': 'shop//filling_module//img_for_bot//nb_ac_01.jpg',
         'category': 'Нутбуки Acer',
         'parameters': [40, 30, 2.5, 'Цвет - серебристй']
     },
@@ -122,7 +122,7 @@ PRODUCTS = [
         'price': 18000,
         'discount': 10,
         'category': 'Нутбуки Asus',
-        'photo': 'shop\\filling_module\\img_for_bot\\nb_as_01.jpg',
+        'photo': 'shop//filling_module//img_for_bot//nb_as_01.jpg',
         'parameters': [45, 35, 2.7, 'Цвет - черный']
     },
     {
@@ -133,7 +133,7 @@ PRODUCTS = [
         'price': 13000,
         'discount': 5,
         'category': 'Нутбуки MSI',
-        'photo': 'shop\\filling_module\\img_for_bot\\nb_mc_01.jpg',
+        'photo': 'shop//filling_module//img_for_bot//nb_mc_01.jpg',
         'parameters': [40, 30, 2.2, 'Цвет - черный']
     },
     {
@@ -144,7 +144,7 @@ PRODUCTS = [
         'price': 21000,
         'discount': 10,
         'category': 'Нутбуки Acer',
-        'photo': 'shop\\filling_module\\img_for_bot\\nb_as_02.jpg',
+        'photo': 'shop//filling_module//img_for_bot//nb_as_02.jpg',
         'parameters': [35, 28, 2.1, 'Цвет - черный']
     },
     {
@@ -155,7 +155,7 @@ PRODUCTS = [
         'price': 15000,
         'discount': 5,
         'category': 'Нутбуки Asus',
-        'photo': 'shop\\filling_module\\img_for_bot\\nb_as_02.jpg',
+        'photo': 'shop//filling_module//img_for_bot//nb_as_02.jpg',
         'parameters': [35, 26, 2.3, 'Цвет - черный']
     },
     {
@@ -166,7 +166,7 @@ PRODUCTS = [
         'price': 5400,
         'discount': 0,
         'category': 'Планшеты Samsung',
-        'photo': 'shop\\filling_module\\img_for_bot\\tb_sg_1.jpg',
+        'photo': 'shop//filling_module//img_for_bot//tb_sg_1.jpg',
         'parameters': [25, 12, 0.7, 'Цвет - серый']
     },
     {
@@ -177,7 +177,7 @@ PRODUCTS = [
         'price': 3900,
         'discount': 0,
         'category': 'Планшеты Huawei',
-        'photo': 'shop\\filling_module\\img_for_bot\\tb_hw_1.jpg',
+        'photo': 'shop//filling_module//img_for_bot//tb_hw_1.jpg',
         'parameters': [20, 10, 0.8, 'Цвет - черный']
     },
     {
@@ -188,7 +188,7 @@ PRODUCTS = [
         'price': 8000,
         'discount': 5,
         'category': 'Планшеты Lenovo',
-        'photo': 'shop\\filling_module\\img_for_bot\\tb_lo_1.jpg',
+        'photo': 'shop//filling_module//img_for_bot//tb_lo_1.jpg',
         'parameters': [15, 10, 0.7, 'Цвет - серый']
     },
     {
@@ -199,7 +199,7 @@ PRODUCTS = [
         'price': 18700,
         'discount': 1,
         'category': 'Планшеты Apple',
-        'photo': 'shop\\filling_module\\img_for_bot\\tb_ap_1.jpg',
+        'photo': 'shop//filling_module//img_for_bot//tb_ap_1.jpg',
         'parameters': [20, 13, 0.6, 'Цвет - серый космос']
     },
     {
@@ -210,7 +210,7 @@ PRODUCTS = [
         'price': 6400,
         'discount': 4,
         'category': 'Планшеты Lenovo',
-        'photo': 'shop\\filling_module\\img_for_bot\\tb_lo_2.jpg',
+        'photo': 'shop//filling_module//img_for_bot//tb_lo_2.jpg',
         'parameters': [19, 13, 0.7, 'Цвет - срый']
     },
     {
@@ -222,7 +222,7 @@ PRODUCTS = [
         'price': 8600,
         'discount': 10,
         'category': 'Стиральные машины WHIRPOOL',
-        'photo': 'shop\\filling_module\\img_for_bot\\wm_wp_1.jpg',
+        'photo': 'shop//filling_module//img_for_bot//wm_wp_1.jpg',
         'parameters': [90, 44, 40, 'Цвет - белый']
     },
     {
@@ -232,7 +232,7 @@ PRODUCTS = [
         'price': 6900,
         'discount': 0,
         'category': 'Стиральные машины INDESIT',
-        'photo': 'shop\\filling_module\\img_for_bot\\wm_it_1.jpg',
+        'photo': 'shop//filling_module//img_for_bot//wm_it_1.jpg',
         'parameters': [95, 40, 39, 'Цвет - белый']
     },
     {
@@ -243,7 +243,7 @@ PRODUCTS = [
         'price': 8300,
         'discount': 5,
         'category': 'Стиральные машины SAMSUNG',
-        'photo': 'shop\\filling_module\\img_for_bot\\wm_sg_1.jpg',
+        'photo': 'shop//filling_module//img_for_bot//wm_sg_1.jpg',
         'parameters': [85, 45, 42, 'Цвет - белый']
     },
     {
@@ -254,7 +254,7 @@ PRODUCTS = [
         'price': 10500,
         'discount': 0,
         'category': 'Стиральные машины LG',
-        'photo': 'shop\\filling_module\\img_for_bot\\wm_lg_1.jpg',
+        'photo': 'shop//filling_module//img_for_bot//wm_lg_1.jpg',
         'parameters': [92, 45, 42, 'Цвет - белый']
     },
     {
@@ -264,7 +264,7 @@ PRODUCTS = [
         'price': 8700,
         'discount': 5,
         'category': 'Стиральные машины SAMSUNG',
-        'photo': 'shop\\filling_module\\img_for_bot\\wm_sg_2.jpg',
+        'photo': 'shop//filling_module//img_for_bot//wm_sg_2.jpg',
         'parameters': [85, 45, 35, 'Цвет - белый']
     },
     {
@@ -276,7 +276,7 @@ PRODUCTS = [
         'price': 10999,
         'discount': 0,
         'category': 'Холодильники SAMSUNG',
-        'photo': 'shop\\filling_module\\img_for_bot\\fr_sg-1.jpg',
+        'photo': 'shop//filling_module//img_for_bot//fr_sg-1.jpg',
         'parameters': [178, 59.5, 63, 'Цвет - серебристый']
     },
     {
@@ -287,7 +287,7 @@ PRODUCTS = [
         'price': 12000,
         'discount': 5,
         'category': 'Холодильники SAMSUNG',
-        'photo': 'shop\\filling_module\\img_for_bot\\fr_sg-2.jpg',
+        'photo': 'shop//filling_module//img_for_bot//fr_sg-2.jpg',
         'parameters': [178, 59.5, 67, 'Цвет - белый']
     },
     {
@@ -299,7 +299,7 @@ PRODUCTS = [
         'price': 9999,
         'discount': 10,
         'category': 'Холодильники Indesit',
-        'photo': 'shop\\filling_module\\img_for_bot\\fr_it-1.jpg',
+        'photo': 'shop//filling_module//img_for_bot//fr_it-1.jpg',
         'parameters': [189, 59.6, 70, 'Цвет - серый']
     },
     {
@@ -311,7 +311,7 @@ PRODUCTS = [
         'price': 10000,
         'discount': 0,
         'category': 'Холодильники Indesit',
-        'photo': 'shop\\filling_module\\img_for_bot\\fr_it-2.jpg',
+        'photo': 'shop//filling_module//img_for_bot//fr_it-2.jpg',
         'parameters': [188.8, 59.5, 65.5, 'Цвет - черный']
     },
     {
@@ -323,7 +323,7 @@ PRODUCTS = [
         'price': 12999,
         'discount': 5,
         'category': 'Холодильники SAMSUNG',
-        'photo': 'shop\\filling_module\\img_for_bot\\fr_sg-3.jpg',
+        'photo': 'shop//filling_module//img_for_bot//fr_sg-3.jpg',
         'parameters': [185, 59.5, 66.8, 'Цвет - серый']
     }
 ]
