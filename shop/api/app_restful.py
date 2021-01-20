@@ -12,3 +12,4 @@ api.add_resource(CategoryResource, '/category', '/category/<string:id>')
 api.add_resource(OrderResource, '/order', '/order/<string:id>')
 api.add_resource(NewsResource, '/news', '/news/<string:id>')
 
+api.init_app(app_api)
