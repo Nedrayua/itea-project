@@ -18,7 +18,7 @@ bot = TeleBot(TOKEN)
 def handle_webhook():
     if request.headers.get('content-type') == 'application/json':
         json_string = request.get_data()
-        update = Update.de_json(json_string).decode('utf-8')
+        update = Update.de_json(json_string).decode('utf-16')
         bot.process_new_updates([update])
         return ''
     abort(403)  # доступ запроса к боту не разрешен
