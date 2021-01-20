@@ -1,103 +1,103 @@
 import os
 
-from shop.models.shop_models import Category, Product
+from shop.models.shop_models import Category, Product, Parameters
 from mongoengine import DoesNotExist
 
 CATEGORIES = [
     {
         'title': 'Нутбуки, компьютеры',
         'description': 'Предлагаем небольшой выбор товаров для работы и развлечений',
-        'parent': 0,
+        'parent': 0
     },
     {
         'title': 'Бытовая техника',
         'description': 'Предлагаем небольшой выбор товаров для улучшения Вашего домашнего быта',
-        'parent': 0,
+        'parent': 0
     },
     {
         'title': 'Нутбуки',
         'description': 'Предлагаем небольшой выбор нутбуков',
-        'parent': 'Нутбуки, компьютеры',
+        'parent': 'Нутбуки, компьютеры'
     },
     {
         'title': 'Планшеты',
         'description': 'Предлагаем небольшой выбор планшетов',
-        'parent': 'Нутбуки, компьютеры',
+        'parent': 'Нутбуки, компьютеры'
     },
     {
         'title': 'Холодильники',
         'description': 'Предлагаем небольшой выбор надежных холодильников',
-        'parent': 'Бытовая техника',
+        'parent': 'Бытовая техника'
     },
     {
         'title': 'Стиральные машины',
         'description': 'Предлагаем небольшой выбор стиральных машин',
-        'parent': 'Бытовая техника',
+        'parent': 'Бытовая техника'
     },
     {
         'title': 'Холодильники Indesit',
         'description': 'Предлагаем небольшой выбор надежных холодильников от итальянского производителя',
-        'parent': 'Холодильники',
+        'parent': 'Холодильники'
     },
     {
         'title': 'Холодильники SAMSUNG',
         'description': 'Предлагаем небольшой выбор надежных холодильников от корейского производителя',
-        'parent': 'Холодильники',
+        'parent': 'Холодильники'
     },
     {
         'title': 'Стиральные машины WHIRPOOL',
         'description': 'Предлагаем небольшой выбор стиральных машин',
-        'parent': 'Стиральные машины',
+        'parent': 'Стиральные машины'
     },
     {
         'title': 'Стиральные машины INDESIT',
         'description': 'Предлагаем небольшой выбор стиральных машин итальянского производителя',
-        'parent': 'Стиральные машины',
+        'parent': 'Стиральные машины'
     },
     {
         'title': 'Стиральные машины SAMSUNG',
         'description': 'Предлагаем небольшой выбор стиральных машин от корейского производителя',
-        'parent': 'Стиральные машины',
+        'parent': 'Стиральные машины'
     },
     {
         'title': 'Стиральные машины LG',
         'description': 'Предлагаем небольшой выбор стиральных машин от корейского производителя',
-        'parent': 'Стиральные машины',
+        'parent': 'Стиральные машины'
     },
     {
         'title': 'Нутбуки MSI',
         'description': 'Предлагаем небольшой выбор Нутбуков от MSI',
-        'parent': 'Нутбуки',
+        'parent': 'Нутбуки'
     },
     {
         'title': 'Нутбуки Acer',
         'description': 'Предлагаем небольшой выбор Нутбуков от Acer',
-        'parent': 'Нутбуки',
+        'parent': 'Нутбуки'
     },
     {
         'title': 'Нутбуки Asus',
         'description': 'Предлагаем небольшой выбор Нутбуков от ASUS',
-        'parent': 'Нутбуки',
+        'parent': 'Нутбуки'
     },
     {
         'title': 'Планшеты Samsung',
         'description': 'Предлагаем небольшой выбор планшетов из Кореи',
-        'parent': 'Планшеты',
+        'parent': 'Планшеты'
     },
     {
         'title': 'Планшеты Huawei',
         'description': 'Предлагаем небольшой выбор планшетов из Китая',
-        'parent': 'Планшеты',
+        'parent': 'Планшеты'
     },
     {
         'title': 'Планшеты Lenovo',
         'description': 'Предлагаем небольшой выбор планшетов из Китая',
-        'parent': 'Планшеты',
+        'parent': 'Планшеты'
     },
     {
         'title': 'Планшеты Apple',
         'description': 'Предлагаем небольшой планшетов от самого модного производителя:))',
-        'parent': 'Планшеты',
+        'parent': 'Планшеты'
     }
 ]
 
@@ -109,8 +109,10 @@ PRODUCTS = [
                        ' / SSD 512 ГБ / nVidia GeForce MX350, 2 ГБ / без ОД / LAN / Wi-Fi / Bluetooth / веб-камера /'
                        ' без ОС / 1.8 кг / серебристый',
         'price': 15000,
+        'discount': 5,
         'photo': 'shop\\filling_module\\img_for_bot\\nb_ac_01.jpg',
-        'category': 'Нутбуки Acer'
+        'category': 'Нутбуки Acer',
+        'parameters': [40, 30, 2.5, 'Цвет - серебристй']
     },
     {
         'title': 'Ноутбук Asus ROG Strix G15 G512LI-HN094 (90NR0381-M01620) Black',
@@ -118,8 +120,10 @@ PRODUCTS = [
                        ' RAM 8 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650 Ti, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth /'
                        ' без ОС / 2.39 кг / черный',
         'price': 18000,
+        'discount': 10,
         'category': 'Нутбуки Asus',
-        'photo': 'shop\\filling_module\\img_for_bot\\nb_as_01.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\nb_as_01.jpg',
+        'parameters': [45, 35, 2.7, 'Цвет - черный']
     },
     {
         'title': 'Ноутбук MSI Modern 14 B4MW Luxury Black',
@@ -127,8 +131,10 @@ PRODUCTS = [
                        'SSD 256 ГБ / AMD Radeon Graphics / без ОД / Wi-Fi / Bluetooth / веб-камера / DOS / 1.3 кг /'
                        ' черный',
         'price': 13000,
+        'discount': 5,
         'category': 'Нутбуки MSI',
-        'photo': 'shop\\filling_module\\img_for_bot\\nb_mc_01.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\nb_mc_01.jpg',
+        'parameters': [40, 30, 2.2, 'Цвет - черный']
     },
     {
         'title': 'Ноутбук Acer Nitro 5 AN515-55-56WH (NH.Q7PEU.00L) Obsidian Black',
@@ -136,8 +142,10 @@ PRODUCTS = [
                        ' RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1660 Ti, 6 ГБ / без ОД / LAN / Wi-Fi / Bluetooth /'
                        ' веб-камера / без ОС / 2.3 кг / черный',
         'price': 21000,
+        'discount': 10,
         'category': 'Нутбуки Acer',
-        'photo': 'shop\\filling_module\\img_for_bot\\nb_as_02.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\nb_as_02.jpg',
+        'parameters': [35, 28, 2.1, 'Цвет - черный']
     },
     {
         'title': 'Ноутбук Asus ROG Strix G15 G512LI-HN057 (90NR0381-M01640) Black',
@@ -145,8 +153,10 @@ PRODUCTS = [
                        ' RAM 16 ГБ / SSD 512 ГБ / nVidia GeForce GTX 1650 Ti, 4 ГБ / без ОД / LAN / Wi-Fi / Bluetooth /'
                        ' без ОС / 2.39 кг / черный',
         'price': 15000,
+        'discount': 5,
         'category': 'Нутбуки Asus',
-        'photo': 'shop\\filling_module\\img_for_bot\\nb_as_02.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\nb_as_02.jpg',
+        'parameters': [35, 26, 2.3, 'Цвет - черный']
     },
     {
         'title': 'Планшет Samsung Galaxy Tab S6 Lite Wi-Fi 64GB Gray (SM-P610NZAASEK)',
@@ -154,8 +164,10 @@ PRODUCTS = [
                        '64 ГБ встроенной памяти + microSD / Wi-Fi / Bluetooth 5.0 / основная камера 8 Мп, фронтальная'
                        ' - 5 Мп / GPS / Android 10.0 (Q) / 465 г / серый',
         'price': 5400,
+        'discount': 0,
         'category': 'Планшеты Samsung',
-        'photo': 'shop\\filling_module\\img_for_bot\\tb_sg_1.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\tb_sg_1.jpg',
+        'parameters': [25, 12, 0.7, 'Цвет - серый']
     },
     {
         'title': 'Планшет Huawei MatePad T10 Wi-Fi 32GB Deepsea Blue',
@@ -163,8 +175,10 @@ PRODUCTS = [
                        ' 32 ГБ встроенной памяти + MicroSD / Wi-Fi / Bluetooth 5.0 / основная камера 5 Мп, фронтальная'
                        ' 2 Мп / GPS / ГЛОНАСС / Android 10 (EMUI) / 450 г',
         'price': 3900,
+        'discount': 0,
         'category': 'Планшеты Huawei',
-        'photo': 'shop\\filling_module\\img_for_bot\\tb_hw_1.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\tb_hw_1.jpg',
+        'parameters': [20, 10, 0.8, 'Цвет - черный']
     },
     {
         'title': 'Планшет Lenovo Tab M8 HD 2/32 WiFi Iron Grey (ZA5G0054UA)',
@@ -172,8 +186,10 @@ PRODUCTS = [
                        ' встроенной памяти + microSD (до 128 ГБ) / Wi-Fi / Bluetooth 5.0 / основная камера 5 Мп +'
                        ' фронтальная 2 Мп / GPS / Android 9.0 (Pie) / 305 г / серый',
         'price': 8000,
+        'discount': 5,
         'category': 'Планшеты Lenovo',
-        'photo': 'shop\\filling_module\\img_for_bot\\tb_lo_1.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\tb_lo_1.jpg',
+        'parameters': [15, 10, 0.7, 'Цвет - серый']
     },
     {
         'title': 'Планшет Apple iPad 10.2" Wi-Fi + Cellular 32GB Space Gray 2020 (MYMH2RK/A)',
@@ -181,8 +197,10 @@ PRODUCTS = [
                        ' / 3G / 4G / Wi-Fi / Bluetooth 4.2 / основная камера 8 Мп, фронтальная - 1.2 Мп / GPS / ГЛОНАСС'
                        ' / iPadOS 14 / 495 г / серый космос',
         'price': 18700,
+        'discount': 1,
         'category': 'Планшеты Apple',
-        'photo': 'shop\\filling_module\\img_for_bot\\tb_ap_1.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\tb_ap_1.jpg',
+        'parameters': [20, 13, 0.6, 'Цвет - серый космос']
     },
     {
         'title': 'Планшет Lenovo Yoga Smart Tab 4/64 LTE Iron Grey (ZA530006UA)',
@@ -190,8 +208,10 @@ PRODUCTS = [
                        ' / 64 ГБ встроенной памяти + microSD (до 256 ГБ) / Wi-Fi / 3G / 4G LTE / Bluetooth 4.2 / '
                        'основная камера 8 Мп, фронтальная - 5 Мп / A-GPS / ГЛОНАСС / Android 9.0 (Pie) / 570 г / серый',
         'price': 6400,
+        'discount': 4,
         'category': 'Планшеты Lenovo',
-        'photo': 'shop\\filling_module\\img_for_bot\\tb_lo_2.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\tb_lo_2.jpg',
+        'parameters': [19, 13, 0.7, 'Цвет - срый']
     },
     {
         'title': 'Стиральная машина узкая WHIRLPOOL FWSG 61083 WBV',
@@ -200,16 +220,20 @@ PRODUCTS = [
                        'Тип двигателя: Инверторный\nМаксимальная скорость отжима, об/мин:1000 об/мин\n'
                        'Способ установки: Отдельностоящая (соло)',
         'price': 8600,
+        'discount': 10,
         'category': 'Стиральные машины WHIRPOOL',
-        'photo': 'shop\\filling_module\\img_for_bot\\wm_wp_1.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\wm_wp_1.jpg',
+        'parameters': [90, 44, 40, 'Цвет - белый']
     },
     {
         'title': 'Стиральная машина узкая INDESIT OMTWSA 61052 W UA ',
         'description': 'Максимальная загрузка белья: 6 кг\nКоличество программ: 16\nГабариты (ВхШхГ): 85 х 59.5 х'
                        ' 42.5 см\nКласс энергопотребления; А++\nМаксимальная скорость отжима, об/мин: 1000 об/мин',
         'price': 6900,
+        'discount': 0,
         'category': 'Стиральные машины INDESIT',
-        'photo': 'shop\\filling_module\\img_for_bot\\wm_it_1.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\wm_it_1.jpg',
+        'parameters': [95, 40, 39, 'Цвет - белый']
     },
     {
         'title': 'Стиральная машина узкая SAMSUNG WW60J30J0LW/UA',
@@ -217,8 +241,10 @@ PRODUCTS = [
                        'Класс энергопотребления: А+\nМаксимальная скорость отжима, об/мин: 1000 об/мин\n'
                        'Способ установки: Отдельностоящая (соло)',
         'price': 8300,
+        'discount': 5,
         'category': 'Стиральные машины SAMSUNG',
-        'photo': 'shop\\filling_module\\img_for_bot\\wm_sg_1.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\wm_sg_1.jpg',
+        'parameters': [85, 45, 42, 'Цвет - белый']
     },
     {
         'title': 'Стиральная машина узкая LG F2J3WS2W',
@@ -226,16 +252,20 @@ PRODUCTS = [
                        'Габариты (ВхШхГ): 85 х 60 х 44 см\nКласс энергопотребления: А+++\nТип двигателя: Инверторный\n'
                        'Максимальная скорость отжима, об/мин:1200 об/мин\nСпособ установки: Отдельностоящая (соло)',
         'price': 10500,
+        'discount': 0,
         'category': 'Стиральные машины LG',
-        'photo': 'shop\\filling_module\\img_for_bot\\wm_lg_1.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\wm_lg_1.jpg',
+        'parameters': [92, 45, 42, 'Цвет - белый']
     },
     {
         'title': 'Стиральная машина узкая SAMSUNG WW70K42101WDUA',
         'description': 'Количество программ: 12\nГабариты (ВхШхГ): 85х60х45 см\nКласс энергопотребления: А+++\n'
                        'Максимальная скорость отжима, об/мин: 1200 об/мин.\nСпособ установки: Отдельностоящая (соло)',
         'price': 8700,
+        'discount': 5,
         'category': 'Стиральные машины SAMSUNG',
-        'photo': 'shop\\filling_module\\img_for_bot\\wm_sg_2.jpg'
+        'photo': 'shop\\filling_module\\img_for_bot\\wm_sg_2.jpg',
+        'parameters': [85, 45, 35, 'Цвет - белый']
     },
     {
         'title': 'Холодильник SAMSUNG RB29FSRNDSA/UA',
@@ -244,9 +274,10 @@ PRODUCTS = [
                        'Полезный объем морозильной камеры: 98 л\nКоличество компрессоров: 1\n'
                        'Тип управления: Электронное',
         'price': 10999,
+        'discount': 0,
         'category': 'Холодильники SAMSUNG',
         'photo': 'shop\\filling_module\\img_for_bot\\fr_sg-1.jpg',
-        'parameters': [178, 59.5, 63]
+        'parameters': [178, 59.5, 63, 'Цвет - серебристый']
     },
     {
         'title': 'Холодильник SAMSUNG RB29FSRNDWW/UA',
@@ -254,9 +285,10 @@ PRODUCTS = [
                        'Система разморозки No Frost (Frost Free): Холодильное+морозильное отделения\n'
                        'Полезный объем морозильной камеры: 98 л\nКоличество компрессоров:1',
         'price': 12000,
+        'discount': 5,
         'category': 'Холодильники SAMSUNG',
         'photo': 'shop\\filling_module\\img_for_bot\\fr_sg-2.jpg',
-        'parameters': [178, 59.5, 67]
+        'parameters': [178, 59.5, 67, 'Цвет - белый']
     },
     {
         'title': 'Двухкамерный холодильник INDESIT LI8 FF2 K',
@@ -265,9 +297,10 @@ PRODUCTS = [
                        'Полезный объем морозильной камеры: 88 л.\nКоличество компрессоров: 1\n'
                        'Тип управления: Механическое',
         'price': 9999,
+        'discount': 10,
         'category': 'Холодильники Indesit',
         'photo': 'shop\\filling_module\\img_for_bot\\fr_it-1.jpg',
-        'parameters': [189, 59.6, 70]
+        'parameters': [189, 59.6, 70, 'Цвет - серый']
     },
     {
         'title': 'Двухкамерный холодильник INDESIT XIT8 T2E X',
@@ -276,9 +309,10 @@ PRODUCTS = [
                        'Полезный объем морозильной камеры: 97 л.\nКоличество компрессоров: 1\nТип управления:'
                        ' Электронное',
         'price': 10000,
+        'discount': 0,
         'category': 'Холодильники Indesit',
         'photo': 'shop\\filling_module\\img_for_bot\\fr_it-2.jpg',
-        'parameters': [188.8, 59.5, 65.5]
+        'parameters': [188.8, 59.5, 65.5, 'Цвет - черный']
     },
     {
         'title': 'Холодильник SAMSUNG RB33J3200SA',
@@ -287,9 +321,10 @@ PRODUCTS = [
                        'Полезный объем морозильной камеры: 98 л.\nКоличество компрессоров: 1\n'
                        'Тип управления: Электронное',
         'price': 12999,
+        'discount': 5,
         'category': 'Холодильники SAMSUNG',
         'photo': 'shop\\filling_module\\img_for_bot\\fr_sg-3.jpg',
-        'parameters': [185, 59.5, 66.8]
+        'parameters': [185, 59.5, 66.8, 'Цвет - серый']
     }
 ]
 
@@ -322,8 +357,19 @@ def create_product(list_data):
             Product.objects.get(title=prod['title'])
             continue
         except DoesNotExist:
-            product = Product(title=prod['title'], description=prod['description'], price=prod['price'],
-                              category=Category.objects.get(title=prod['category']))
+            parameters = Parameters(
+                height=prod['parameters'][0],
+                width=prod['parameters'][1],
+                weight=prod['parameters'][2],
+                additional_description=prod['parameters'][3]
+            )
+            product = Product(
+                title=prod['title'],
+                description=prod['description'],
+                price=prod['price'],
+                category=Category.objects.get(title=prod['category']),
+                parameters=parameters
+            )
         way = os.path.abspath(prod['photo'])
         with open(way, 'rb') as file:
             product.image.put(file, content_type='image/jpg')

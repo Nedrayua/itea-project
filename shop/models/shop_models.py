@@ -130,14 +130,14 @@ class Product(me.Document):
                f'Цена: {self.price:.2f} гривен;\nскидка {self.discount}%;\nцена со скидкой ' \
                f'{self.price*(self.discount/100) if self.discount > 0 else self.price:.2f} гривен\n\n' \
 
-        # add_text = f'Параметры:\n{rca("Высота", self.parameters.height)}\n' \
-        #            f'{rca("Длинна", self.parameters.width)}\n' \
-        #            f'{rca("Вес", self.parameters.weight)}\n' \
-        #            f'{rca("Описание", self.parameters.additional_description)}\n'
+        add_text = f'Параметры:\n{rca("Высота", self.parameters.height)}\n' \
+                   f'{rca("Длинна", self.parameters.width)}\n' \
+                   f'{rca("Вес", self.parameters.weight)}\n' \
+                   f'{rca("Описание", self.parameters.additional_description)}\n'
         if short:
             return text
         else:
-            return text #+ add_text
+            return text + add_text
 
     @property
     def product_price(self):
