@@ -10,7 +10,8 @@ time.sleep(0.5)
 bot.set_webhook(WEBHOOK_URL, certificate=open('webhook_cert.pem'))
 
 app = Flask(__name__)
-app.register_blueprint(app_tg)
 app.register_blueprint(app_api)
+app.register_blueprint(app_tg)
+
 
 app.run(debug=True)
