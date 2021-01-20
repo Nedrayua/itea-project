@@ -1,8 +1,8 @@
 import time
 from flask import Flask
 
-from .shop.bot.shop_bot import app_tg, bot
-from .shop.api.app_restful import app_api
+from shop.bot.shop_bot import app_tg, bot
+from shop.api.app_restful import app_api
 from shop.bot.config import WEBHOOK_URL
 
 bot.remove_webhook()
