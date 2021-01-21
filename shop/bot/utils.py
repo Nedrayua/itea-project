@@ -66,7 +66,7 @@ def return_content_args(name, argument, message=None):
     :message: сообщение в случае пустого аргумента
     """
     if message:
-        data = f'{name}: {argument}' if argument else f'{name}: {message}'
+        data = f'{name}:\n {argument}' if argument else f'{name}: {message}'
     else:
-        data = f'{name}: {argument}' if argument else ""
+        data = f'{name}:\n {argument}' if argument else ""
     return data

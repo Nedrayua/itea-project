@@ -1,11 +1,12 @@
-from flask import Blueprint
+from flask import Blueprint, Flask
 from flask_restful import Api
 
 from . resources import UserResource, CategoryResource, ProductResource, OrderResource, NewsResource
 
-app_api = Blueprint('app_api', __name__)
-api = Api(app_api)
-api.init_app(app_api)
+app = Flask(__name__)
+#app_api = Blueprint('app_api', __name__)
+api = Api(app)
+#api.init_app(app_api)
 
 api.add_resource(UserResource, '/user', '/user/<string:id>')
 api.add_resource(ProductResource, '/product', '/product/<string:id>')
