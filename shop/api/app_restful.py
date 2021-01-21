@@ -8,7 +8,7 @@ app = Flask(__name__)
 api = Api(app)
 #api.init_app(app_api)
 
-api.add_resource(UserResource, '/user', '/user/<string:id>')
+api.add_resource(UserResource, '/api/user', '/user/<string:id>')
 api.add_resource(ProductResource, '/product', '/product/<string:id>')
 api.add_resource(CategoryResource, '/category', '/category/<string:id>')
 api.add_resource(OrderResource, '/order', '/order/<string:id>')
