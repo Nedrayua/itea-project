@@ -2,7 +2,7 @@ import json
 from telebot import TeleBot
 from telebot.types import Update, ReplyKeyboardMarkup, KeyboardButton, InlineKeyboardMarkup, Message
 from mongoengine import NotUniqueError, ValidationError
-from flask import Blueprint, request, abort, Flask
+from flask import Blueprint, request, abort
 
 from shop.models import shop_models
 from shop.models import extra_models
@@ -10,12 +10,11 @@ from . utils import inline_kb_from_iterable, inline_kb
 from . config import TOKEN, WEBHOOK_URI
 from . import constance
 
-# app_tg = Blueprint('app_tg', __name__)
-app = Flask(__name__)
+app_tg = Blueprint('app_tg', __name__)
 bot = TeleBot(TOKEN)
 
 
-@app.route(WEBHOOK_URI, methods=['POST'])
+@app_tg.route(WEBHOOK_URI, methods=['POST'])
 def handle_webhook():
     if request.headers.get('content-type') == 'application/json':
         json_string = request.get_data().decode('utf-8')

@@ -30,3 +30,11 @@ typing-extensions==3.7.4.3
 urllib3==1.25.11
 virtualenv==20.2.1
 Werkzeug==1.0.1
+
+import time
+from flask import Flask
+
+from shop.bot.shop_bot import app_tg, bot
+from shop.api.app_restful import app_api
+from shop.bot.config import WEBHOOK_URL
+
